@@ -7,7 +7,7 @@ from flask import Flask, jsonify, request
 #区块链类
 class Blockchain(object):
     def __init__(self):
-        self.userdata = []
+        self.userdata = None
         self.chain = []
         #建立一个初始块
         self.new_block(previous_hash=1)
@@ -22,17 +22,12 @@ class Blockchain(object):
             'previous_hash': previous_hash or self.hash(self.chain[-1]),
 
         }
-        self.userdata = []
+        self.userdata = None
         self.chain.append(block)
         return block
 
-    def update(self, id, exp, hp, money):
-        self.userdata.append({
-            'id': id,
-            'exp': exp,
-            'hp': hp,
-            'money': money,
-        })
+    def update(self, str):
+        self.userdata=str.decode()
         return self.last_block['index'] + 1
 
     @property
@@ -60,12 +55,7 @@ def mine():
 
     last_block = blockchain.last_block
 
-    blockchain.update(
-        id=123,
-        exp=123,
-        hp=123,
-        money=123,
-    )
+    blockchain.update("world")
 
     previous_hash = blockchain.hash(last_block)
     block = blockchain.new_block(previous_hash)
@@ -80,14 +70,9 @@ def mine():
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
-    values = request.get_json()
-
-    required = ['id', 'exp', 'hp', 'money']
-    if not all(k in values for k in required):
-        return 'Missing values', 400
-
+    str = request.get_data()
     last_block = blockchain.last_block
-    index = blockchain.update(values['id'], values['exp'], values['hp'], values['money'])
+    index = blockchain.update(str)
     previous_hash = blockchain.hash(last_block)
     block = blockchain.new_block(previous_hash)
 
@@ -99,6 +84,15 @@ def full_chain():
     response = {
         'chain': blockchain.chain,
         'length': len(blockchain.chain),
+    }
+    print(blockchain.chain)
+    return jsonify(response), 200
+
+@app.route('/get_by_index', methods=['GET'])
+def get_by_id():
+    id = int(request.args.get('id'))
+    response = {
+        'chain': blockchain.chain[id]["user-data"],
     }
     return jsonify(response), 200
 
