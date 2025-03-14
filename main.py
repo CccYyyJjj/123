@@ -3,6 +3,7 @@ import json
 from time import time
 from uuid import uuid4
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 
 #区块链类
@@ -42,6 +43,7 @@ class Blockchain(object):
 
 
 app = Flask(__name__)
+CORS(app)  # 处理跨域请求
 
 node_identifier = str(uuid4()).replace('-', '')
 
@@ -69,15 +71,26 @@ def mine():
     }
     return jsonify(response), 200
 
-@app.route('/transactions/new', methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def new_transaction():
-    str = request.get_data()
+    if 'file' not in request.files:
+        return jsonify({'status': -1})
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'status': -2})
+
+
+    str = file.read()
     last_block = blockchain.last_block
     index = blockchain.update(str)
     previous_hash = blockchain.hash(last_block)
     block = blockchain.new_block(previous_hash)
 
-    response = {'message': f'Transaction will be added to Block {index}'}
+    response = {
+        'message': f'Transaction will be added to Block {index}',
+        'status': 1
+        }
     return jsonify(response), 201
 
 @app.route('/chain', methods=['GET'])
