@@ -51,7 +51,7 @@ blockchain = Blockchain()
 
 @app.route('/', methods=['GET'])
 def bc():
-    return "404 NOT FOUND"
+    return "怎么给你发现这里的"
 
 @app.route('/mine', methods=['GET'])
 def mine():

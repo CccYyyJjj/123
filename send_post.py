@@ -4,7 +4,7 @@ from Crypto.Cipher import PKCS1_OAEP
 import base64
 import json
 
-API_URL='http://127.0.0.1:5000/transactions/new'
+API_URL='http://http://10.33.83.197:5000/upload'
 
 json_data={
     'id': 666,

@@ -18,6 +18,7 @@ import axios from 'axios';
 dayjs.extend(customParseFormat);
 const { Header, Footer, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
+const { Dragger } = Upload;
 
 const Background = () => {
 

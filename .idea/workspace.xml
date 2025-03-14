@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7660e227-5d38-4f11-ab21-ef83490e9c34" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/前端测试/cet/craco.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/前端测试/cet/src/Bpp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/前端测试/cet/src/Bpp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/前端测试/cet/src/cet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/前端测试/cet/src/component/StyleConst.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_post.py" beforeDir="false" afterPath="$PROJECT_DIR$/send_post.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端测试/cet/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/前端测试/cet/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端测试/cet/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/前端测试/cet/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端测试/cet/src/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/前端测试/cet/src/Background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端测试/cet/src/Bpp.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端测试/cet/src/Bpp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端测试/cet/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/前端测试/cet/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +38,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.cet.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.send_post.executor": "Run"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
